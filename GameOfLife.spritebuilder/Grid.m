@@ -66,7 +66,9 @@ static const int GRID_COLUMNS = 10;
     }
 }
 
-/* - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
+/*
+
+- (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
     //get the x,y coordinates of the touch
     CGPoint touchLocation = [touch locationInNode:self];
@@ -86,6 +88,8 @@ static const int GRID_COLUMNS = 10;
     int column = touchPosition.x / _cellWidth;
     
     return _gridArray[row][column];
-} */
+}
+
+*/
 
 @end
