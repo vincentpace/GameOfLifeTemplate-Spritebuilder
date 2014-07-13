@@ -68,6 +68,7 @@ static const int GRID_COLUMNS = 10;
 
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
+    int numAlive = _totalAlive;
     //get the x,y coordinates of the touch
     CGPoint touchLocation = [touch locationInNode:self];
     
@@ -76,6 +77,12 @@ static const int GRID_COLUMNS = 10;
     
     //invert it's state - kill it if it's alive, bring it to life if it's dead.
     creature.isAlive = !creature.isAlive;
+    
+    //update population based on clicking
+    if (creature.isAlive == TRUE) {numAlive++;}
+    else {numAlive--;}
+    _totalAlive = numAlive;
+    
 }
 
 - (Creature *)creatureForTouchPosition:(CGPoint)touchPosition
