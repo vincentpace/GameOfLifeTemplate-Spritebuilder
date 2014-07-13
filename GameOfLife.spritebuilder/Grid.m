@@ -150,7 +150,7 @@ static const int GRID_COLUMNS = 10;
 
 - (void)updateCreatures
 {
-    // To make the label update properly, add an int called numAlive to the beginning of your updateCreatures method and set it to 0. Inside the loop that checks if creatures are alive you need to increment numAlive by 1 for every creature that is alive.
+    // To make the label update properly, add an int called numAlive to the beginning of your updateCreatures method and set it to 0.
     int numAlive = 0;
     
     // iterate through the rows
@@ -166,6 +166,7 @@ static const int GRID_COLUMNS = 10;
             // Next you need to create an if/else if statement. In the if statement, check if the Creature's livingNeighbors property is set to 3. If it is, that means it has 3 live neighbors so you want to set its isAlive property to TRUE. In the else if you want to check if the Creature has less than or equal to 1 living neighbors or more than or equal to 4. If either are true, set the Creature's isAlive property to FALSE.
             if (currentCreature.livingNeighbors == 3) {
                 currentCreature.isAlive = TRUE;
+                // Inside the loop that checks if creatures are alive you need to increment numAlive by 1 for every creature that is alive.
                 numAlive++;
             }
             else {
