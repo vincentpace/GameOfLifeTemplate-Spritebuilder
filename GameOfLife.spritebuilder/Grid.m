@@ -27,6 +27,8 @@ static const int GRID_COLUMNS = 10;
     
     // accept touches on the grid
     self.userInteractionEnabled = YES;
+    
+    _totalAlive = 0;
 }
 
 - (void)setupGrid
@@ -68,7 +70,6 @@ static const int GRID_COLUMNS = 10;
 
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
-    int numAlive = _totalAlive;
     //get the x,y coordinates of the touch
     CGPoint touchLocation = [touch locationInNode:self];
     
@@ -79,10 +80,10 @@ static const int GRID_COLUMNS = 10;
     creature.isAlive = !creature.isAlive;
     
     //update population based on clicking
+    int numAlive = _totalAlive;
     if (creature.isAlive == TRUE) {numAlive++;}
     else {numAlive--;}
     _totalAlive = numAlive;
-    
 }
 
 - (Creature *)creatureForTouchPosition:(CGPoint)touchPosition
