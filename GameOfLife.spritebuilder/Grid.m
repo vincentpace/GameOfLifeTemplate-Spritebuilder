@@ -86,7 +86,8 @@ static const int GRID_COLUMNS = 10;
     return _gridArray[row][column];
 }
 
--(void)evolveStep {
+- (void)evolveStep
+{
     //update each Creature's neighbor count
     [self countNeighbors];
     
@@ -97,7 +98,7 @@ static const int GRID_COLUMNS = 10;
     _generation++;
 }
 
--(void)countNeighbors {
+- (void)countNeighbors {
     // iterate through the rows
     // note that NSArray has a method 'count' that will return the number of elements in the array
     for (int i = 0; i < [_gridArray count]; i++)
