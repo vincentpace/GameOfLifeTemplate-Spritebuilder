@@ -8,7 +8,6 @@
 
 #import "Grid.h"
 #import "Creature.h"
-#import "MainScene.h"
 
 // these are variables that cannot be changed
 static const int GRID_ROWS = 8;
@@ -81,11 +80,11 @@ static const int GRID_COLUMNS = 10;
     creature.isAlive = !creature.isAlive;
     
     //update population based on clicking
+    //NOT WORKING.  UI gets updated via MainScene.m's (void)step. Haven't been able to figure out how to make clicking on the items update the UI.
     int numAlive = _totalAlive;
     if (creature.isAlive == TRUE) {numAlive++;}
     else {numAlive--;}
     _totalAlive = numAlive;
-    _populationLabel.string = [NSString stringWithFormat:@"%d", _totalAlive];
 }
 
 - (Creature *)creatureForTouchPosition:(CGPoint)touchPosition
